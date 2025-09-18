@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# logs & debug
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# build artifacts
+dist/
+build/
+tmp/
+coverage/
+
+# system
+.DS_Store
+Thumbs.db
+
+# media & certificates
+instruction.mp4
+*.crt

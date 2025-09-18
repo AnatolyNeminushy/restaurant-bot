@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PGDATABASE:-ayami_bot}
+      POSTGRES_USER: ${PGUSER:-postgres}
+      POSTGRES_PASSWORD: ${PGPASSWORD:-postgres}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  bot:
+    build: .
+    depends_on:
+      - db
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PGHOST: ${PGHOST:-db}
+      PGSSLMODE: ${PGSSLMODE:-disable}
+    ports:
+      - "5000:5000"
+
+volumes:
+  db_data:
