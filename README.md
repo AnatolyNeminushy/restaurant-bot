@@ -91,8 +91,7 @@ index.js        точка входа: Express API + запуск бота
 | PGDATABASE          | Имя базы данных                                                   |
 | PGUSER              | Пользователь                                                      |
 | PGPASSWORD          | Пароль                                                            |
-| PGSSLMODE           | Режим SSL (disable, 
-equire, verify-full)                   |
+| PGSSLMODE           | Режим SSL (disable, require, verify-full)                   |
 | PGSSL_CA_PATH       | Путь до корневого сертификата (если нужен)                        |
 
 ## REST API
