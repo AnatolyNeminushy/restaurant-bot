@@ -1,6 +1,6 @@
 // Версия 2.0
 
-require("dotenv").config();
+require('dotenv-flow').config();
 
 const { Telegraf, Context } = require("telegraf");
 const express = require("express");
