@@ -54,7 +54,7 @@ index.js        точка входа: Express API + запуск бота
    # укажите токены и настройки, для docker-compose обязательно PGHOST=db, PGSSLMODE=disable
    `
 2. Запустите контейнеры:
-   `ash
+   `bash
    docker compose up --build
    `
 3. API бота будет доступно по http://localhost:5000, PostgreSQL проброшен на localhost:5432.
@@ -142,4 +142,5 @@ eservations, order_items. Подключайте бота к своей PostgreS
 - Оформить миграции базы данных.
 - Настроить CI/CD с проверками, сборкой Docker-образа и деплоем.
 - Подключить сбор метрик и дашборды.
+
 
