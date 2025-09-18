@@ -49,13 +49,11 @@ index.js        точка входа: Express API + запуск бота
 ## Быстрый старт (Docker)
 
 1. Скопируйте переменные окружения и заполните реальные значения:
-   `bash
-   cp .env.example .env
+   `cp .env.example .env
    # укажите токены и настройки, для docker-compose обязательно PGHOST=db, PGSSLMODE=disable
    `
 2. Запустите контейнеры:
-   `bash
-   docker compose up --build
+   `docker compose up -d
    `
 3. API бота будет доступно по http://localhost:5000, PostgreSQL проброшен на localhost:5432.
 4. Данные базы хранятся в volume db_data. Остановить и удалить контейнеры можно командой docker compose down (с флагом -v, если нужно очистить volume).
@@ -64,14 +62,12 @@ index.js        точка входа: Express API + запуск бота
 
 1. Убедитесь, что установлен Node.js 18+ и работает PostgreSQL.
 2. Установите зависимости и заполните .env:
-   `bash
-   npm install
+   `npm install
    cp .env.example .env
    # пропишите реальные значения, PGHOST=localhost и нужный PGSSLMODE
    `
 3. Запустите бота:
-   `bash
-   node index.js
+   `node index.js
    # или с авто-перезапуском: npx nodemon index.js
    `
 
