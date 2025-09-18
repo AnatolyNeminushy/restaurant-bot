@@ -17,7 +17,7 @@ services:
       - db
     restart: unless-stopped
     env_file:
-      - .env
+      - .env.example
     environment:
       NODE_ENV: production
       PGHOST: ${PGHOST:-db}
