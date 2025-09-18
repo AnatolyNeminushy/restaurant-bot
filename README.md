@@ -42,14 +42,14 @@ index.js        точка входа: Express API + запуск бота
 
 1. Откройте приложение Telegram и найдите бота @BotFather.
 2. Нажмите «Start» и выполните команду /newbot.
-3. Придумайте название бота (видно пользователям) и уникальный username, который заканчивается на ot (например, yami_demo_bot).
+3. Придумайте название бота (видно пользователям) и уникальный username, который заканчивается на bot (например, cool_demo_bot).
 4. BotFather выдаст HTTP API token. Скопируйте его в .env в поле BOT_TOKEN.
 5. Храните токен в секрете. Если он утёк, выполните /token → «Revoke current token» в BotFather и обновите значение в .env.
 
 ## Быстрый старт (Docker)
 
 1. Скопируйте переменные окружения и заполните реальные значения:
-   `ash
+   `bash
    cp .env.example .env
    # укажите токены и настройки, для docker-compose обязательно PGHOST=db, PGSSLMODE=disable
    `
@@ -64,13 +64,13 @@ index.js        точка входа: Express API + запуск бота
 
 1. Убедитесь, что установлен Node.js 18+ и работает PostgreSQL.
 2. Установите зависимости и заполните .env:
-   `ash
+   `bash
    npm install
    cp .env.example .env
    # пропишите реальные значения, PGHOST=localhost и нужный PGSSLMODE
    `
 3. Запустите бота:
-   `ash
+   `bash
    node index.js
    # или с авто-перезапуском: npx nodemon index.js
    `
@@ -91,7 +91,8 @@ index.js        точка входа: Express API + запуск бота
 | PGDATABASE          | Имя базы данных                                                   |
 | PGUSER              | Пользователь                                                      |
 | PGPASSWORD          | Пароль                                                            |
-| PGSSLMODE           | Режим SSL (disable, equire, erify-full)                   |
+| PGSSLMODE           | Режим SSL (disable, 
+equire, verify-full)                   |
 | PGSSL_CA_PATH       | Путь до корневого сертификата (если нужен)                        |
 
 ## REST API
@@ -118,9 +119,10 @@ index.js        точка входа: Express API + запуск бота
 
 ## Работа с БД
 
-Основные таблицы: chats, messages, orders, eservations, order_items. Подключайте бота к своей PostgreSQL — локальной, контейнерной или облачной. Схему/данные можно накатить отдельными миграциями или дампом, которые хранятся вне репозитория.
+Основные таблицы: chats, messages, orders, 
+eservations, order_items. Подключайте бота к своей PostgreSQL — локальной, контейнерной или облачной. Схему/данные можно накатить отдельными миграциями или дампом, которые хранятся вне репозитория.
 
-Меню подгружается из ssets/menu.csv и кэшируется при старте.
+Меню подгружается из assets/menu.csv и кэшируется при старте.
 
 ## Мониторинг и логирование
 
@@ -140,3 +142,4 @@ index.js        точка входа: Express API + запуск бота
 - Оформить миграции базы данных.
 - Настроить CI/CD с проверками, сборкой Docker-образа и деплоем.
 - Подключить сбор метрик и дашборды.
+
